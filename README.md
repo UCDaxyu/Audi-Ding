@@ -153,7 +153,7 @@ Mechanical
 </p>
 
 <p align="center">
-  <img src="/py_BandPass_FilterBank.png" width= "400" height ="400" />
+  <img src="/images/py_BandPass_FilterBank.png" width= "400" height ="400" />
   <img src="/py_Clusters1.png" width= "400" height ="400" />
   <img src="/py_ColorClusters1.png" width= "400" height ="400" />
   <img src="/py_FilterBanks_SPKR1.png" width= "400" height ="400" /><br>
