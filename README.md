@@ -69,6 +69,10 @@ Further testing was performed by recording our own voices for multiple training 
 
 In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
 
+The robustness of our design is further tested through the use of band notch filters removing certain frequencies throughout our signal. For our implementation we used scipy.signal.iirnotch as well as the iirnotch() for matlab.
+
+Further testing is in progress using outside resources to verify the rate of accuracy for our system. Currently our system has 100% for all tested signals including those distorted in the signal-to-noise region of 25-50dB.
+
 <p align="center">
   <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
   <img src="/Images/py_Test_Evaluation1_Normalized.png" width= "800" height ="400" /><br>
