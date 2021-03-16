@@ -53,6 +53,8 @@ The sampling frequency was found to be 12.5 khz for every signal. This means tha
 </p>
 
 ## Test 5 & 6: Vector Quantization
+For vector quantization the LBG algorithm was used. First we found a the centroid of all data points with in a given set and then we split the centroid in two according to a splitting coefficient (1+epsilon) and (1-epsilon). Next each point within the set was clustered around the nearest centroid through the euclidean distance formula. The total distortion was found by summing the distortion of each point to its closest centroid. Each time centroids were split they were repositioned to ensure they were in an area that would cause the least amount of distortion. Once the centroids were repositioned to a sufficeintly good area they would split again. This process continued until the desired amount of centroids was found. From our testing 8 to 16 centroids seemed to optimize our results. 
+
 <p align="center">
   <img src="/Images/py_ColorClusters1.png" width= "800" height ="400" />
 </p>
