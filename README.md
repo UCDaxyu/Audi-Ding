@@ -153,6 +153,7 @@ Mechanical
 </p>
 
 <p align="center">
+  <img src="https://github.com/Nick-Newcomb/Audi-Ding/blob/main/Images/py_BandPass_FilterBank.png"
   <img src="/images/py_BandPass_FilterBank.png" width= "400" height ="400" />
   <img src="py_Clusters1.png" width= "400" height ="400" />
   <img src="/py_ColorClusters1.png" width= "400" height ="400" />
