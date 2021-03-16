@@ -75,7 +75,7 @@ For vector quantization the LBG algorithm was used. First we found a the centroi
 
 
 <p align="center">
-  <img src="/Images/Clustering2.gif" width= "400" height ="400" />
+  <img src="/Images/Clustering.gif" width= "400" height ="400" />
 </p>
 This figure demonstrates the clustering algorithm step by step.
 
@@ -111,6 +111,28 @@ Further testing is in progress using outside resources to verify the rate of acc
 
 
 
+#### Step 1 ####
+define the number of test files you want to run 
+initiate loop for number of test files stored in central location (runs in ascending order)
+read the .wav files
+remove 'stereo' signals if present by selecting first in the array
+pre-emphasize the signals https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html
+#### Step 2 ####
+Find the windowed frames using MELFB_own() function which takes an input of data (.wav files)
+#### Step 3 ####
+Find magnitudes and power spectral densities using the MAGPOW function which takes input of the windowed frames previously found
+Apply noise to signal if desired based on signal to noise ratio
+#### Step 4 ####
+Find the melBanks and associated bank of pandpass triangles using melBanks() formula which takes input of power spectrum density previously found
+myBanksT = {} # Dictionary of banks for test signals
+#### Step 5 ####
+define number of desired mfcc coefficeints 
+find mfcc's using dct() formula with input of melBanks found in preceeding step
+whiten() your mfcc coefficients if you desire to try and improve accuracy
+#### Step 6 ####
+find the codebook and clustered points using Cent_Finder Function which takes input of mfcc's found in preceeding step
+#### Step 7 #### 
+use codebooks and clustered points to match signals to training values and determine accuracy
 
 
 
