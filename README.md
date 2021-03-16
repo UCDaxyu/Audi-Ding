@@ -20,12 +20,16 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
 <p align="center">
   <img src="/Images/py_Speaker1_Data.png" width= "800" height ="400" />
 </p>
+Here we can see an example plot of voice signal for speaker 1. We normalized the amplitudes to a max amplitude of 1 for every signal to normalize the signal.
+Signals s9 - s11 contain stereo data. In these cases we only kept the first instance when reading in the file. 
 
 
+## Test 2: Periodograms of the STFT
 <p align="center">
   <img src="/Images/py_Periodogram_SPKR1_STFT.png" width= "800" height ="400" />
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "800" height ="400" />
 </p>
+The sampling frequency was found to be 12.5 khz for every signal. This means that a 256 sample long frame is 20.5 ms long. The reccomended frame length, N, is anywhere from 20ms to 30 ms. We went ahead with N = 312, which equates to a 25 ms frame length. The frames are chosen to overlap by 60%. 
 
 
 ## Test 3: Filter Banks and Filter Bank Responses
