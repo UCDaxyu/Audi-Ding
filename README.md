@@ -2,12 +2,11 @@
 ___
 # Speaker Recognition
 
-## Project Milestone Schedule
-- FMEA Review - 11/9/2020
-- Data Cycle Review - 11/16/2020
-- Safety Note Review - In Progress
-- Conceptual Design Review - TBD
+## Introduction
+- 
 
+## Principles of Speaker Recognition
+- 
 
 ## Test 1: Listening to the Data
 After listening to the data that was provided (updated) on 3/14/2021 we established ground truth data by listening to the files provided. It was established that the data tracked in a diagnol pattern. Training Speaker 1 corresponded to Test Speaker 1, 2 to 2, 3 to 3, etc.
