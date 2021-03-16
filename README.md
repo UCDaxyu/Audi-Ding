@@ -153,17 +153,36 @@ Mechanical
 </p>
 
 <p align="center">
-  <img src="/Images/py_BandPass_FilterBank.png"
-  <img src="/Images/py_Clusters1.png" width= "400" height ="400" />
-  <img src="/Images/py_ColorClusters1.png" width= "400" height ="400" />
+  <img src="/Images/py_Speaker1_Data.png" width= "400" height ="400" />
+</p>
+
+<p align="center">
+  <img src="/Images/py_BandPass_FilterBank.png" width= "400" height ="400" />
+</p>
+
+<p align="center">
   <img src="/Images/py_FilterBanks_SPKR1.png" width= "400" height ="400" /><br>
-  
-  <img src="/Images/py_MFCC_SPKR1T.png" width= "400" height ="400" />
+</p>
+
+<p align="center">
   <img src="/Images/py_Periodogram_SPKR1_STFT.png" width= "400" height ="400" />
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "400" height ="400" />
-  <img src="/py_ScatterComparison.png" width= "400" height ="400" /><br>
+</p>
+
+<p align="center">
+  <img src="/Images/py_MFCC_SPKR1T.png" width= "400" height ="400" />
+</p>
   
-  <img src="/Images/py_Speaker1_Data.png" width= "400" height ="400" />
+<p align="center">
+  <img src="/Images/py_Clusters1.png" width= "400" height ="400" />
+  <img src="/Images/py_ColorClusters1.png" width= "400" height ="400" />
+</p>
+
+<p align="center">
+  <img src="/py_ScatterComparison.png" width= "400" height ="400" /><br>
+</p>
+
+<p align="center">
   <img src="/Images/py_Test_Evaluation.png" width= "400" height ="400" />
   <img src="/Images/py_Test_Evaluation1_Normalized.png" width= "400" height ="400" /><br>
 </p>
