@@ -155,11 +155,11 @@ Mechanical
 ## Test 1: Listening to the Data
 <p align="center">
 After listening to the data that was provided (updated) on 3/14/2021 we established ground truth data by listening to the files provided. It was established that the data tracked in a diagnol pattern. Training Speaker 1 corresponded to Test Speaker 1, 2 to 2, 3 to 3, etc.
-  | Training Speaker | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
-  |------------------|---|---|---|---|---|---|---|---|---|----|----|
-  | Test Speaker     | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
 </p>
 
+| Training Speaker | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|------------------|---|---|---|---|---|---|---|---|---|----|----|
+| Test Speaker     | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
 
 ## Test 2: Looking at the Data
 <p align="center">
