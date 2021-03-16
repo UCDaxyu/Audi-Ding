@@ -75,7 +75,7 @@ For vector quantization the LBG algorithm was used. First we found a the centroi
 
 
 <p align="center">
-  <img src="/Images/Clustering.gif" width= "800" height ="400" />
+  <img src="/Images/Clustering.gif" width= "400" height ="400" />
 </p>
 
 ## Test 7-9: Full Test And Demonstration
