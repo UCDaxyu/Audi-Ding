@@ -6,7 +6,7 @@ function [Mov,h] = animateLGB(mfccs, M , delta, threshold)
     % threshold: (0,1]      Max allowed total distortion
     % OUTPUTS:
     %
-    
+    mfccs = mfccs/max(abs(mfccs),[],'all');
     
     
     % Begin with a 1 centroid codebook 

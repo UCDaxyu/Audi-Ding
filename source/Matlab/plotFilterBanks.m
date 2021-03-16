@@ -1,13 +1,13 @@
 
-f_s = 40E3; %Sampling Rate of audio
-n_fft = 256;
+f_s = 12500; %Sampling Rate of audio
+n_fft = 312;
 filter_max = 2;
-K = 20;
+K = 13;
 figure()
-filter_banks = melBanks(K,f_s,n_fft,0,20E3,filter_max);
-plot(1:(n_fft/2), filter_banks(1,1:(n_fft/2)));
+filter_banks = melBanks(K,f_s,n_fft,0,f_s/2,filter_max);
+
 hold on
-for k = 1:K
+for k = 2:K
     plot(1:(n_fft/2), filter_banks(k,1:(n_fft/2)));
 end
 hold off
