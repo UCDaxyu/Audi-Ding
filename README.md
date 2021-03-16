@@ -62,6 +62,8 @@ With all filter banks calculated, we can now find the Mel Frequency Cepstral Coe
 </p>
 
 ## Test 5 & 6: Vector Quantization
+For vector quantization the LBG algorithm was used. First we found a the centroid of all data points with in a given set and then we split the centroid in two according to a splitting coefficient (1+epsilon) and (1-epsilon). Next each point within the set was clustered around the nearest centroid through the euclidean distance formula. The total distortion was found by summing the distortion of each point to its closest centroid. Each time centroids were split they were repositioned to ensure they were in an area that would cause the least amount of distortion. Once the centroids were repositioned to a sufficeintly good area they would split again. This process continued until the desired amount of centroids was found. From our testing 8 to 16 centroids seemed to optimize our results. 
+
 <p align="center">
   <img src="/Images/py_ColorClusters1.png" width= "800" height ="400" />
 </p>
@@ -77,6 +79,17 @@ With all filter banks calculated, we can now find the Mel Frequency Cepstral Coe
 </p>
 
 ## Test 7-9: Full Test And Demonstration
+For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
+It was noted; however, that originally there were only 8 test sets and 11 training sets. It was noted that speakers 9,10,11 did not match well with any of the other 8 speakers. For this reason it was necessary to establish a threshold for distortion. Because our distortion calculations always resulted in 'an answer' we had to say that beyond a certain distortion level (both relative and absolute) we could not guarntee a good match.
+
+Further testing was performed by recording our own voices for multiple training and test sets. All of our own recorded samples matched well. 
+
+In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
+
+The robustness of our design is further tested through the use of band notch filters removing certain frequencies throughout our signal. For our implementation we used scipy.signal.iirnotch as well as the iirnotch() for matlab.
+
+Further testing is in progress using outside resources to verify the rate of accuracy for our system. Currently our system has 100% for all tested signals including those distorted in the signal-to-noise region of 25-50dB.
+
 <p align="center">
   <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
   <img src="/Images/py_Test_Evaluation1_Normalized.png" width= "800" height ="400" /><br>
