@@ -64,8 +64,17 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
 </p>
 
 
+<p align="center">
+  <img src="/Images/py_NoiseAdded.png" width= "800" height ="400" />
+</p>
 
+<p align="center">
+  <img src="/Images/py_noisy_signals_sloppy.png" width= "800" height ="400" /><br>
+</p>
 
+<p align="center">
+  <img src="/Images/py_SNR_50_25.png" width= "800" height ="400" /><br>
+</p>
 
 
 
