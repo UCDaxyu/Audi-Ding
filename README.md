@@ -77,6 +77,7 @@ For vector quantization the LBG algorithm was used. First we found a the centroi
 <p align="center">
   <img src="/Images/Clustering.gif" width= "400" height ="400" />
 </p>
+This figure demonstrates the clustering algorithm step by step.
 
 ## Test 7-9: Full Test And Demonstration
 For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
