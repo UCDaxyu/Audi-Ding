@@ -179,7 +179,7 @@ Mechanical
 </p>
 
 <p align="center">
-  <img src="/py_ScatterComparison.png" width= "800" height ="400" /><br>
+  <img src="/Images/py_ScatterComparison.png" width= "800" height ="400" />
 </p>
 
 <p align="center">
