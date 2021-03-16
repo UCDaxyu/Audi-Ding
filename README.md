@@ -62,6 +62,13 @@ The sampling frequency was found to be 12.5 khz for every signal. This means tha
 </p>
 
 ## Test 7-9: Full Test And Demonstration
+For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
+It was noted; however, that originally there were only 8 test sets and 11 training sets. It was noted that speakers 9,10,11 did not match well with any of the other 8 speakers. For this reason it was necessary to establish a threshold for distortion. Because our distortion calculations always resulted in 'an answer' we had to say that beyond a certain distortion level (both relative and absolute) we could not guarntee a good match.
+
+Further testing was performed by recording our own voices for multiple training and test sets. All of our own recorded samples matched well. 
+
+In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
+
 <p align="center">
   <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
   <img src="/Images/py_Test_Evaluation1_Normalized.png" width= "800" height ="400" /><br>
