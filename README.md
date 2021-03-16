@@ -109,8 +109,32 @@ Further testing is in progress using outside resources to verify the rate of acc
   <img src="/Images/py_SNR_50_25.png" width= "800" height ="400" /><br>
 </p>
 
+## Running The Python Code
 
+#### Step 1 ####
+define the number of test files you want to run
+initiate loop for number of test files stored in central location (runs in ascending order)
+read the .wav files
+remove 'stereo' signals if present by selecting first in the array
+pre-emphasize the signals https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html
+#### Step 2 ####
+Find the windowed frames using MELFB_own() function which takes an input of data (.wav files)
+#### Step 3 ####
+Find magnitudes and power spectral densities using the MAGPOW function which takes input of the windowed frames previously found
+Apply noise to signal if desired based on signal to noise ratio
+#### Step 4 ####
+Find the melBanks and associated bank of pandpass triangles using melBanks() formula which takes input of power spectrum density previously found
+myBanksT = {} # Dictionary of banks for test signals
+#### Step 5 ####
+define number of desired mfcc coefficeints
+find mfcc's using dct() formula with input of melBanks found in preceeding step
+whiten() your mfcc coefficients if you desire to try and improve accuracy
+#### Step 6 ####
+find the codebook and clustered points using Cent_Finder Function which takes input of mfcc's found in preceeding step
+#### Step 7 ####
+use codebooks and clustered points to match signals to training values and determine accuracy
 
+https://colab.research.google.com/drive/1DL-dh1zrQkTrhxCcWg_n2OzGf3Q1I6zW#revisionId=0B-_tvbV2KtsVVS9MVmxHRXBid0dlZlVpbUh3UmFjeEhXZVM0PQ&scrollTo=f8Vz9-WWEHi-&uniqifier=1
 
 
 
