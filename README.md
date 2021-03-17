@@ -29,6 +29,11 @@ Signals s9 - s11 contain stereo data. In these cases we only kept the first inst
   <img src="/Images/py_Periodogram_SPKR1_STFT.png" width= "800" height ="400" />
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "800" height ="400" />
 </p>
+
+<p align="center">
+  <img src="/Images/py_PSD_own.png" width= "800" height ="400" />
+</p>
+
 The sampling frequency was found to be 12.5 khz for every signal. This means that a 256 sample long frame is 20.5 ms long. The reccomended frame length, N, is anywhere from 20ms to 30 ms. We went ahead with N = 312, which equates to a 25 ms frame length. The frames are chosen to overlap by 60%. 
 
 The figure above is the periodogram after taking the short time fourier transfrom(STFT). This plot visualizes both how the power of the signal is distributed over the frequency spectrum and how the that power shifts across time. We can see that the majority of the signal is contained in frequencies less than 4.5khz.
