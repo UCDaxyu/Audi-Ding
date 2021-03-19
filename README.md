@@ -56,6 +56,11 @@ Signals s9 - s11 contain stereo data. In these cases we only kept the first inst
 </p>
 
 <p align="center">
+  <img src="/Images/py_Periodogram_SPKR1_STFT.png"/>
+  <img src="/Images/py_Periodogram_SPKR1_myfunction.png"/>
+</p>
+
+<p align="center">
   <img src="/Images/py_PSD_own.png" width= "800" height ="400" />
   <figcaption>Caption goes here</figcaption>
 </p>
@@ -65,13 +70,9 @@ The sampling frequency was found to be 12.5 khz for every signal. This means tha
 The figure above is the periodogram after taking the short time fourier transfrom(STFT). This plot visualizes both how the power of the signal is distributed over the frequency spectrum and how the that power shifts across time. We can see that the majority of the signal is contained in frequencies less than 4.5khz.
 
 ## Test 3: Filter Banks and Filter Bank Responses
-<p align="center">
-  <img src="/Images/py_BandPass_FilterBank.png" width= "800" height ="400" />
-</p>
-![Bandpass Filterbanks](https://github.com/UCDaxyu/Audi-Ding/Images/py_BandPass_FilterBank.png)
 
 <p align="center">
-   <img src="/Images/py_BandPass_FilterBank.png")
+   <img src="/Images/py_BandPass_FilterBank.png") />
 </p>
 
 Once we have the STFT of our signals, we want to reduce the amount of data we have while also emphasizing the critical frequencies common to human voices. To do this, we utilize a set of triangular filter banks linearly linearly spaced out on the **mel frequency scale**. The mel scale can be defined as such:
