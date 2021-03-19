@@ -1,13 +1,17 @@
-function MFCCs = mfccs(foldername,K,framesize,overlap,fsout)
+function MFCCs = mfccs(foldername,num_ceps,framesize,overlap,fsout,K,n_fft,notched,fnotch)
     arguments
         foldername (1,1) {mustBeTextScalar,mustBeNonzeroLengthText} 
-        K (1,1) {mustBeNumeric, mustBeInteger,mustBePositive, mustBeNonzero, mustBeNonNan} = 13
+        num_ceps (1,1) {mustBeNumeric, mustBeInteger,mustBePositive, mustBeNonzero, mustBeNonNan} = 13
         framesize (1,1) {mustBeNumeric, mustBeReal,mustBePositive, mustBeNonzero, mustBeNonNan} = 0.025
         overlap (1,1) {mustBeNumeric, mustBeLessThan(overlap,1)} = 0.6 
         fsout  (1,1) {mustBeNumeric,mustBeReal} = 12500
+        K (1,1) {mustBeNumeric, mustBeInteger,mustBePositive, mustBeNonzero, mustBeNonNan} = 20
+        n_fft (1,1) {mustBeNumeric, mustBeInteger,mustBePositive, mustBeNonzero, mustBeNonNan} = 512
+        notched = 'default'
+        fnotch = 500
     end
     S = size(dir([foldername+'*.wav']),1);
-
+    
     for i = 1:S
         filename = "s" + num2str(i)+ ".wav";
         [xin,fs] = audioread(foldername+filename);
@@ -29,16 +33,16 @@ function MFCCs = mfccs(foldername,K,framesize,overlap,fsout)
     %figure()
     for i = 1:S % Get Frames of length N every M samples for each file
         L = floor((length(x{i})-N)/M);
-        mfccs = zeros(L+1,K);
+        mfccs = zeros(L+1,num_ceps);
         xframesTemp = zeros(L+1,N);
         for m = 0:L
             xframesTemp(m+1,:) = x{i}((m*M + 1):(m*M + N)); 
-            mfccs(m+1,:) = mfcc_own(xframesTemp(m+1,:), fsout, K);
+            mfccs(m+1,:) = mfcc_own(xframesTemp(m+1,:),num_ceps, fsout, n_fft, K,notched,fnotch);
         end
-        MFCCs(i) = {mfccs(:,2:K)};
+        MFCCs(i) = {mfccs(:,2:num_ceps)};
         xframes(i) = {xframesTemp};
         %MFCCs(i) = {MFCCs{i}/max(abs(MFCCs{i}),[],'all')};
-        MFCCs(i) = {MFCCs{i}./std(MFCCs{i},0,1)};
+        %MFCCs(i) = {MFCCs{i}./std(MFCCs{i},0,1)};
         %MFCCs(i) = {MFCCs{i} - repmat(mean(MFCCs{i},1),L+1,1)};
     end
 end

@@ -8,7 +8,7 @@ ___
 # Speaker Recognition
 
 ## Abstract
-This project is used to develop a method to compare audio signals. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
+This project is used to develop a method to recognize different speakers. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system uses has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
 
 ## Introduction
 Our project can be simplified into two major categories each consisting of a few major steps. 
@@ -35,7 +35,10 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
 
 ## Test 2: Looking at the Data
 <p align="center">
-  <img src="/Images/py_Speaker1_Data.png" width= "800" height ="400" />
+  <figure>
+    <img src="/Images/py_Speaker1_Data.png" width= "800" height ="400" />
+    <figcaption>Figure 1.</figcaption>
+  </figure>
 </p>
 Here we can see an example plot of voice signal for speaker 1. We normalized the amplitudes to a max amplitude of 1 for every signal to normalize the signal.
 Signals s9 - s11 contain stereo data. In these cases we only kept the first instance when reading in the file. 
@@ -49,6 +52,7 @@ Signals s9 - s11 contain stereo data. In these cases we only kept the first inst
 
 <p align="center">
   <img src="/Images/py_PSD_own.png" width= "800" height ="400" />
+  <figcaption>Caption goes here</figcaption>
 </p>
 
 The sampling frequency was found to be 12.5 khz for every signal. This means that a 256 sample long frame is 20.5 ms long. The reccomended frame length, N, is anywhere from 20ms to 30 ms. We went ahead with N = 312, which equates to a 25 ms frame length. The frames are chosen to overlap by 60%. 
@@ -59,17 +63,19 @@ The figure above is the periodogram after taking the short time fourier transfro
 <p align="center">
   <img src="/Images/py_BandPass_FilterBank.png" width= "800" height ="400" />
 </p>
-Once we have the STFT of our signals, we want to reduce the amount of data we have while also emphasizing the critical frequencies common to human voices. To do this, we utilize a set of triangular filter banks linearly spaced out on the mel frequency scale. This scale helps emphasize lower frequencies where the majority of human voices tend to fall under. The mel scale can be defined as such:
+![Bandpass Filterbanks](https://github.com/UCDaxyu/Audi-Ding/Images/py_BandPass_FilterBank.png)
+
+Once we have the STFT of our signals, we want to reduce the amount of data we have while also emphasizing the critical frequencies common to human voices. To do this, we utilize a set of triangular filter banks linearly linearly spaced out on the **mel frequency scale**. The mel scale can be defined as such:
 
 <p align="center">
-  <img src="/Images/melscale.png" width= "200" height ="100" /><br>
+  <img src="/Images/melscale.png" width= "200" height ="100" />
 </p>
-
+The scale by centering our filterbanks on the melscale we naturally emphasize lower frequencies where the majority of human voices tend to fall under while demphasizing higher frequency ranges.
 
 <p align="center">
-  <img src="/Images/py_FilterBanks_SPKR1.png" width= "800" height ="400" /><br>
+  <img src="/Images/Mat_Spectrogram.png" width= "800" height ="400" />
 </p>
-Here we plot the resulting filter banks for every time frame of speaker 1. 
+In this section, we compare the spectrograms of speaker 1 before and after the filterbanks are applied. On the left is a plot of a normal spectrogram. On the right is the resulting spectrogram when our spectrum has been quantized by 20 filter banks. Quantizing the spectrum helps to reduce the dimensionality of our 
 
 
 ## Test 4: Finding the MFCC Coefficients
@@ -83,8 +89,20 @@ With all filter banks calculated, we can now find the Mel Frequency Cepstral Coe
   <img src="/Images/py_Clusters1.png" width= "800" height ="400" />
 </p>
 
-## Test 5 & 6: Vector Quantization
-For vector quantization the LBG algorithm was used. First we found a the centroid of all data points with in a given set and then we split the centroid in two according to a splitting coefficient (1+epsilon) and (1-epsilon). Next each point within the set was clustered around the nearest centroid through the euclidean distance formula. The total distortion was found by summing the distortion of each point to its closest centroid. Each time centroids were split they were repositioned to ensure they were in an area that would cause the least amount of distortion. Once the centroids were repositioned to a sufficeintly good area they would split again. This process continued until the desired amount of centroids was found. From our testing 8 to 16 centroids seemed to optimize our results. 
+
+We used the LBG algorithm for vector quantization. 
+
+1. First, we found a the centroid of all data points with in a given set and 
+2. Then, we split the centroid in two according to a splitting coefficient (1+epsilon) and (1-epsilon). 
+3. Next, each point within the set was clustered around the nearest centroid through the euclidean distance formula. 
+4. The total distortion was found by summing the distortion of each point to its closest centroid. 
+5. We compare this new distortion to the distortion of the old postions with the following rule:
+  1. If the difference in distortion relative to the new distortion is greater than 1% go back to step 3
+  2. If the difference is less than 1%, we assume we have found optimal cluster configurations
+6. Go back to step 2 until we have the desired number of clusters
+
+The choice of clusters is up to us. The current design limits our number of clusters to powers of 2. The number of clusters needs to provide enough specificity so as to unique identify each speaker but also be broad enough to reduce the risk of overfitting our data. From our testing 8 to 16 centroids seemed to optimize our results. The rest of tests will utilize 8 clusters to relieve any issue of overfitting our model to the training data while still providing good performance.
+
 
 <p align="center">
   <img src="/Images/py_ColorClusters1.png" width= "800" height ="400" />
@@ -99,7 +117,7 @@ For vector quantization the LBG algorithm was used. First we found a the centroi
 <p align="center">
   <img src="/Images/Clustering2.gif" width= "400" height ="400" />
 </p>
-This figure demonstrates the clustering algorithm step by step.
+Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The function to make this animation is provided in the Matlab folder. We hope this will be a good visual demonstrations for other DSP students.
 
 ## Test 7-9: Full Test And Demonstration
 For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
