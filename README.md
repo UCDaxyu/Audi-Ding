@@ -2,8 +2,8 @@
 #### Authors: Nick Newcomb,  Alex Yu 
 
 <p align="center">
-  <img src="/Images/NickBioPic.jpg" width= "433" height ="577" />
-  <img src="/Images/AlexBioPic.jpg" width= "433" height ="577" />
+  <img src="/Images/NickBioPic.jpg" width= "400" height ="533" />
+  <img src="/Images/AlexBioPic.jpg" width= "400" height ="533" />
 </p>
 ##### Responsibilities:
 We worked together throughout all aspects of this project and aided eachother along the way. Alex was predominantly responsible for writing the code in MATLAB while Nick was predominantly responsible for writing the code in Python. This is not to say that either was written exclusively and throughout this project we have relied **heavily** on eachother when we got stuck at different parts.
