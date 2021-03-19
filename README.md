@@ -1,5 +1,8 @@
 ## Team: Audi-Ding
-##### Alex Yu and Nick Newcomb 
+##### Alex Yu 
+##### Nick Newcomb 
+##### Responsibilities:
+We worked together throughout all aspects of this project and aided eachother along the way. Alex was predominantly responsible for writing the code in MATLAB while Nick was predominantly responsible for writing the code in Python. This is not to say that either was written exclusively and throughout this project we have relied heavily on eachother when we got stuck at different parts.
 ##### This serves as the report for our speaker recognition project.
 ___
 # Speaker Recognition
@@ -8,7 +11,16 @@ ___
 This project is used to develop a method to compare audio signals. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
 
 ## Introduction
-- 
+Our project can be simplified into two major categories each consisting of a few major steps. 
+### Category 1
+The continuous time signals (recorded audio .wav files) are framed into blocked chunks. These frames are determined by specifying the desired size of the frame in mS and specifying the amount of desired overlap. While we experimented with many values we decided to run our final program with frames of 25mS and 60% overlap. Afer the frames are generated a window is applied to taper each side of the frame. For our project we found that the Hamming window seemed to function well. Next we found the fast fourier transform of our windowed signals and combined with a bandpass filterbank using triangle bandpass filters. The bandpass filters used the mel-frequency spectrum and then were used to complete the cepstrum (go back to the time domain).
+
+After developing the MFCC's for each speaker we developed codebooks for each speaker for comparison. In order to develop a codebook we used LBG method, however; similar methods such as k-means can be used as well. Specifically, we first found the centroid for all points within a speakers data set by finding the mean across all dimensions (determined by number of MFCC's). The centroid was then split and the new centroids were reposistioned to optimal locations where they then split again. This process would continue until the desired number of optimal centroids was obtained. For our project we found that 8 centroids was optimal. 
+
+### Category 2
+The steps followed for category 1 were followed; however, following the completion of the steps the MFCC's of the test signal were compared to each codebook from the training set. Distortion between the test signal and the training signal was found by finding the Euclidean distance between each data point and it's nearest centroid. The sum of these distances was identified and the training signal with the least distortion was evaluated as the most likely candidate to be a match. 
+
+In order to ensure there are not false positives we impleneted a requirement that the next closest training signal be at least 15% worse than the best represented signal. Additionally we implemented an absolute distortion requirement such that the total distortion must be less than 2.5. 
 
 ## Principles of Speaker Recognition
 - 
