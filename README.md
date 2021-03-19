@@ -55,10 +55,6 @@ Signals s9 - s11 contain stereo data. In these cases we only kept the first inst
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "800" height ="400" />
 </p>
 
-<p align="center">
-  <img src="/Images/py_Periodogram_SPKR1_STFT.png"/>
-  <img src="/Images/py_Periodogram_SPKR1_myfunction.png"/>
-</p>
 
 <p align="center">
   <img src="/Images/py_PSD_own.png" width= "800" height ="400" />
