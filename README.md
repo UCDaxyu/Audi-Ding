@@ -149,6 +149,14 @@ Further testing is in progress using outside resources to verify the rate of acc
   <img src="/Images/py_SNR_50_25.png" width= "800" height ="400" /><br>
 </p>
 
+## Test 8: Applying Notch Filters 
+<p align="center">
+  <img src="/Images/Mat_notches.png" width= "800" height ="400" />
+</p>
+Adding noise was the first way to test for robustness. Another way to test the robustness  is too retest the testing data with frequency bands removed. From the spectrograms in test 3, we saw very distinct frequencies show up for all speakers. We can apply a notch filter like the ones shown above to remove some of those critical frequencies and see if we can still get a match. The base frequency for voiced sounds starts roughly at 300 hz while many voiced sounds are found in the 1khz range. 
+For fun, we centered the notch frequencies with the peak of each filter bank to produce the most disturbance in our model. 
+
+The effects of notch filters were surprisingly weaker than anticipated. 
 ## Running The Python Code
 
 #### Step 1 ####
