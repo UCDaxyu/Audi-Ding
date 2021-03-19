@@ -1,4 +1,6 @@
 ## Team: Audi-Ding
+##### Alex Yu and Nick Newcomb 
+##### This serves as the report for our speaker recognition project.
 ___
 # Speaker Recognition
 
