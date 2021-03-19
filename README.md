@@ -70,6 +70,10 @@ The figure above is the periodogram after taking the short time fourier transfro
 </p>
 ![Bandpass Filterbanks](https://github.com/UCDaxyu/Audi-Ding/Images/py_BandPass_FilterBank.png)
 
+<p align="center">
+   <img src="/Images/py_BandPass_FilterBank.png")
+</p>
+
 Once we have the STFT of our signals, we want to reduce the amount of data we have while also emphasizing the critical frequencies common to human voices. To do this, we utilize a set of triangular filter banks linearly linearly spaced out on the **mel frequency scale**. The mel scale can be defined as such:
 
 <p align="center">
