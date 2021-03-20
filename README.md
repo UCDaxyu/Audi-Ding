@@ -58,12 +58,12 @@ Signals s9 - s11 contain stereo data. In these cases we only kept the first inst
 
 <p align="center">
   <img src="/Images/py_PSD_own.png" width= "800" height ="400" />
-  <figcaption>Caption goes here</figcaption>
 </p>
 
 The sampling frequency was found to be 12.5 khz for every signal. This means that a 256 sample long frame is 20.5 ms long. The reccomended frame length, N, is anywhere from 20ms to 30 ms. We went ahead with N = 312, which equates to a 25 ms frame length. The frames are chosen to overlap by 60%. 
 
 The figure above is the periodogram after taking the short time fourier transfrom(STFT). This plot visualizes both how the power of the signal is distributed over the frequency spectrum and how the that power shifts across time. We can see that the majority of the signal is contained in frequencies less than 4.5khz.
+
 
 ## Test 3: Filter Banks and Filter Bank Responses
 
@@ -78,10 +78,18 @@ Once we have the STFT of our signals, we want to reduce the amount of data we ha
 </p>
 The scale by centering our filterbanks on the melscale we naturally emphasize lower frequencies where the majority of human voices tend to fall under while demphasizing higher frequency ranges.
 
+
+<p align="center">
+  <img src="/Images/Spectrogram.gif" width= "800" height ="400" />
+</p>
+We apply the filterbanks to our STFT. To motivate this, we can observe the FFT of each time frame from the spectrogram. With the fft, we have much higher resolution in our spectrum than we arguably need. Going through each time frame in this animation, we can see major changes that occur that are masked by alot of "noise".
+
 <p align="center">
   <img src="/Images/Mat_Spectrogram.png" width= "800" height ="400" />
 </p>
-In this section, we compare the spectrograms of speaker 1 before and after the filterbanks are applied. On the left is a plot of a normal spectrogram. On the right is the resulting spectrogram when our spectrum has been quantized by 20 filter banks. Quantizing the spectrum helps to reduce the dimensionality of our 
+
+So lets compare the spectrograms of speaker 1 before and after the filterbanks are applied. The left side is a plot of the normal spectrogram. On the right is the resulting spectrogram when our spectrum has been quantized by 20 filter banks. As wee can see, quantizing the spectrum helps to reduce the dimensionality of our training problem while preserving the general shape of each speaker's frequency spectrum.
+
 
 
 ## Test 4: Finding the MFCC Coefficients
