@@ -245,4 +245,6 @@ Speech, Signal Processing, Vol. ASSP-28, No. 4, August 1980.
 
 [8]Frequently Asked Questions WWW site, http://svr-www.eng.cam.ac.uk/comp.speech/
 
-[9] (https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
+[9] Speech Processing for Machine Learning: Filter banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between WWW site (https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
+
+
