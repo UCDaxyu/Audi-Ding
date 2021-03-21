@@ -144,7 +144,7 @@ It was noted; however, that originally there were only 8 test sets and 11 traini
 </p>
 
 <p align="center">
-  <img src="/Images/cant_tell_8_11_text.png" width= "800" height ="400" />
+  <img src="/Images/cant_tell_8_11_text.png"  />
 </p>
 
 Here you can see our program correctly identified 8 of the test speakers and for the remaining three identified there was very little confidence between trainers. We found the marginal similarity between a speaker and trainer by finding the trainer with the lowest total distortion and comparing it with the trainer with the next least distortion. Speakers 9-11 had between 0-3% margin. For tests we set a minimum margin of 20%.
@@ -154,11 +154,11 @@ Further testing was performed by recording our own voices for multiple training 
 In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
 
 <p align="center">
-  <img src="/Images/noisy_results.png" width= "800" height ="400" /><br>
+  <img src="/Images/noisy_results.png"/><br>
 </p>
 
 <p align="center">
-  <img src="/Images/noisy_text_results.png" width= "400" height ="200" /><br>
+  <img src="/Images/noisy_text_results.png"  /><br>
 </p>
 
 The plot’s you see above include SNR’s of 40,25,15, and 5 respectively. For each, our program correctly identified the trainer-speaker combo; however, for the SNR of 5 our program failed to identify the trainer with a sufficiently higher relative confidence. This is clearly illustrated through our color map. As you can see for the fourth column the relative difference between trainer 1, 7, and 9 is very low.
