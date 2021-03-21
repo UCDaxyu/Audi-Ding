@@ -83,7 +83,7 @@ Once we have the STFT of our signals, we want to reduce the amount of data we ha
 <p align="center">
   <img src="/Images/melscale.png" width= "200" height ="100" />
 </p>
-The scale by centering our filterbanks on the melscale we naturally emphasize lower frequencies where the majority of human voices tend to fall under while demphasizing higher frequency ranges.
+The scale by centering our filterbanks on the melscale we naturally emphasize lower frequencies where the majority of human voices tend to fall under while de-emphasizing higher frequency ranges.
 
 
 <p align="center">
