@@ -12,9 +12,9 @@ We worked together throughout all aspects of this project and aided eachother al
 ___
 # Our Project
 
-<p align= "center" >
+
 [![Speaker Recognition Presentation](https://img.youtube.com/vi/KjJYcQYxU4I/0.jpg)](https://www.youtube.com/watch?v=KjJYcQYxU4I)
-</p>
+
 
 
 
