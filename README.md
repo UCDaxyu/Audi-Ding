@@ -82,13 +82,13 @@ The scale by centering our filterbanks on the melscale we naturally emphasize lo
 <p align="center">
   <img src="/Images/Spectrogram.gif" width= "800" height ="400" />
 </p>
-We apply the filterbanks to our STFT. To motivate this, we can observe the FFT of each time frame from the spectrogram. With the fft, we have much higher resolution in our spectrum than we arguably need. Going through each time frame in this animation, we can see major changes that occur that are masked by alot of "noise".
+We apply the filterbanks to our STFT. To motivate this, we can observe the FFT of each time frame from the spectrogram. With the fft, we have much higher resolution in our spectrum than we arguably need. Going through each time frame in this animation, we can see major changes that occur that are masked by alot of "noise". Therefore, we apply the filterbanks as a dimensionality reduction technique to better focus our data.
 
 <p align="center">
   <img src="/Images/Mat_Spectrogram.png" width= "800" height ="400" />
 </p>
 
-So lets compare the spectrograms of speaker 1 before and after the filterbanks are applied. The left side is a plot of the normal spectrogram. On the right is the resulting spectrogram when our spectrum has been quantized by 20 filter banks. As wee can see, quantizing the spectrum helps to reduce the dimensionality of our training problem while preserving the general shape of each speaker's frequency spectrum.
+So lets compare the spectrograms of speaker 1 before and after the filterbanks are applied. The left side is a plot of the normal spectrogram. On the right is the resulting spectrogram when our spectrum has been quantized by 20 filter banks. Quantizing the spectrum reduced the representation of our signal to simply 12 points per frame as opposed to the 512 fft points. This is all done while sitll preserving the general shape of each speaker's frequency spectrum across time.
 
 
 
@@ -122,7 +122,9 @@ The choice of clusters is up to us. The current design limits our number of clus
 <p align="center">
   <img src="/Images/Clustering.gif" width= "400" height ="400" />
 </p>
-Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The animation steps through the process of splitting the clusters and repositioning the centroids to the center of each new cluster. Note that the lines drawn are only valid for 2 dimensional data points and ** are not fully representative of data in higher dimensions**. The function to make this animation is provided in the Matlab folder. We hope this will be a good visual demonstrations for other DSP students.
+Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The animation steps through the process of splitting the clusters and repositioning the centroids to the center of each new cluster. 
+
+Please note that the drawn lines indicate cluster regions **only if your data is exactly two dimensional.** They are not representative of clusters in higher dimensions like our MFCCs(12 dimensions). But we still believe this provides a useful visual demonstration that explains what is happening. The function to make this animation is provided in the Matlab folder.
 
 ## Test 7-9: Full Test And Demonstration
 For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases and are shown in the figure below. It is imortant to note that although we were originally comparing the exact same signals against eachother there was still distortion. This was because we calculated distortion by finding the Euclidian distance between each point and its nearest cenetroid.
