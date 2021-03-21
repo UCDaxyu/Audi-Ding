@@ -47,8 +47,11 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
     <figcaption>Figure 1.</figcaption>
   </figure>
 </p>
-Here we can see an example plot of voice signal for speaker 1. We normalized the amplitudes to a max amplitude of 1 for every signal to normalize the signal.
-Signals s9 - s11 contain stereo data. In these cases we only kept the first instance when reading in the file. 
+
+
+The first step in this sequence is to gather your desired audio signals. For our testing we gathered 11 training .wav files and broke them down into their time, sample rate and data point components. Using this information we broke our continuous speech signal down into framed blocks that were 25mS long each having a 60% overlap.
+
+One thing that gave us some issues at first was analyzing stereo signals. In order to compare signals appropriately we evaluated whether a signal was stereophonic or monophonic and ensured we only took a monophonic component of each signal. Our original data set identified 3 signals as stereo signals.
 
 
 ## Test 2: Periodograms of the STFT
