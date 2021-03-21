@@ -167,15 +167,10 @@ In order to test the robustness of our program we applied white gaussian noise t
   <img src="/Images/noisy_text_results.png"  width= "800" height ="100"/><br>
 </p>
 
-<<<<<<< Updated upstream
 The plot’s you see above include SNR’s of 40,25,15, and 5 respectively. For each, our program correctly identified the trainer-speaker combo; however, for the SNR of 5 our program failed to identify the trainer with a sufficiently higher relative confidence. This is clearly illustrated through our color map. As you can see for the fourth column the relative difference between trainer 1, 7, and 9 is very low.
 
 The robustness of our design is further tested through the use of band notch filters removing certain frequencies throughout our signal. For our implementation we used scipy.signal.iirnotch as well as the iirnotch() for matlab.
 
-
-
-## Test 8: Applying Notch Filters 
-=======
 ## Test 9: Using Other Data Sets
 
 <p align="center">
@@ -183,11 +178,9 @@ The robustness of our design is further tested through the use of band notch fil
 </p>
 With the success in our recognition model on the provided data, we wanted to extend our model to other datasets found online. The [Free-Spoken-Digit Dataset](https://github.com/Jakobovski/free-spoken-digit-dataset) was chosen for its similarity to our original data set. There are 6 speakers each saying 'zero' 50 times. The documentation indicates that the first five samples are the test set and the other 45 are for the test set. We adopt this in our analysis of the data as well.  
 
-The distortion matrix above shows the results of our model. The test files are referenced in the horizontal axis and the training models are on the vertical axis. Looking at the data, we can see that the first five test columns have the least relative distortion when compared to the first 45 training models and high relative distortion for the remaining 180 models. This same trend is seen for the next 5 test samples anf 45 training models and so on. This is 100% consistent with the ground truth. Every test sample has been correctly identified by the correct speaker and every training model is closely identifies with their original speaker.
+The distortion matrix above shows the results of our model. The test files are referenced in the horizontal axis and the training models are on the vertical axis. Looking at the data, we can see that the first five test columns have the least relative distortion when compared to the first 45 training models and high relative distortion for the remaining 180 models. This same trend is seen for the next 5 test samples anf 45 training models and so on. This is 100% consistent with the ground truth. Every test sample has been correctly identified by the correct speaker and every training model is closely identifies with their original speaker. 
 
-## Test 8: Applying Notch Filters  
-
->>>>>>> Stashed changes
+## Test 8: Applying Notch Filters 
 <p align="center">
   <img src="/Images/Mat_notches.png" width= "800" height ="400" />
 </p>
