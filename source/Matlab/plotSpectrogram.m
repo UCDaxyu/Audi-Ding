@@ -1,14 +1,15 @@
-foldername = "C:\Users\Alex Yu\OneDrive\Documents\MATLAB\Data\Training_Data\";
-S = 2; 
+foldername = "C:\Users\Alex Yu\OneDrive\Documents\MATLAB\Data\Training_Data_Official\";
+S = 1; 
 N = 312;
 M = floor(N*(0.6));
 filename = "s" + num2str(S)+ ".wav";  
 [xin,fs] = audioread(foldername+filename);
+figure()
 subplot(1,2,1)
-spectrogram(xin, hamming(N),M,[],fs,'yaxis');
-title("Spectrogram of Speaker 1")
+spectrogram(xin, hamming(N),M,[],fs,'yaxis')
+title("Spectrogram of Speaker " +num2str(S))
 s = spectrogram(xin, hamming(N),M,N,'yaxis');
-[height,width] = size(s)
+[height,width] = size(s);
 ax = gca;
 ax.YDir = 'normal';
 filter_max = 2;
@@ -30,27 +31,27 @@ ax.YDir = 'normal';
 xlim([1 width])
 ylim([1 K])
 
-% set Ticks and TickLabels
+%set Ticks and TickLabels
 yticks(1:2:K)
 Ticks = melspace(K,0, fs/2);
 Ticks = round(Ticks(2:2:end)/1000,2);
 yticklabels(Ticks)
 ylabel('Frequency (kHz)')
 ylabel(c,'Power (db)')
-xticks(0:(fs/(10*M)):(fs/(N-M)))
+xticks(0:(fs/(10*(N-M))):(fs/(N-M)))
 xticklabels(0:0.1:1)
 xlabel('Time(s)')
 title("Filterbank-ogram of Speaker " + num2str(S))
 
-figure()
-for S = 1:12
-    subplot(3,4,S)
-    filename = "s" + num2str(S)+ ".wav";  
-    [xin,fs] = audioread(foldername+filename);
-    xin = xin(:,1);
-    spectrogram(xin, hamming(N),M,[],fs,'yaxis');
-    title("Speaker " + num2str(S))
-end
+%figure()
+%for S = 1:12
+%    subplot(3,4,S)
+%    filename = "s" + num2str(S)+ ".wav";  
+%    [xin,fs] = audioread(foldername+filename);
+%    xin = xin(:,1);
+%    spectrogram(xin, hamming(N),M,[],fs,'yaxis');
+%    title("Speaker " + num2str(S))
+%end
 
 
 

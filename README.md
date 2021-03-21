@@ -221,7 +221,7 @@ https://colab.research.google.com/drive/1qBeKrqYebtBMqKyBH-P6t9xjwLoUgOK8?usp=sh
 
 
 ## Running the Matlab Code
-
+All of the scripts immediately found in the Matlab folder are ready to run. The primary script is Main.m that asks for the path to your test and training data in seperate folders. Secondary helper files are found in the functions folder.
 
 
 ## References

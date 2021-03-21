@@ -10,11 +10,23 @@ function MFCCs = mfccs(foldername,num_ceps,framesize,overlap,fsout,K,n_fft,notch
         notched = 'default'
         fnotch = 500
     end
-    S = size(dir([foldername+'*.wav']),1);
     
-    for i = 1:S
-        filename = "s" + num2str(i)+ ".wav";
-        [xin,fs] = audioread(foldername+filename);
+    fds = fileDatastore(foldername + "*.wav", 'ReadFcn', @importdata);
+
+    fullFileNames = fds.Files;
+
+    numFiles = length(fullFileNames);
+
+    % Loop over all files reading them in and plotting them.
+
+    for k = 1 : numFiles
+
+        fprintf('Now reading file %s\n', fullFileNames{k});
+
+        % Now have code to read in the data using whatever function you want.
+
+        % Now put code to plot the data or process it however you want...
+        [xin,fs] = audioread(fullFileNames{k});
         xin = xin(:,1);
         %xin = cropFile(xin);
         xin = srconv(xin, fs, fsout)';
@@ -22,16 +34,16 @@ function MFCCs = mfccs(foldername,num_ceps,framesize,overlap,fsout,K,n_fft,notch
         %xin = xin/max(abs(xin));
         %subplot(4,3,i)
         %plot(1:length(xin),xin);
-        x(i) = {xin};
+        x(k) = {xin};
     end
 
     N = floor(framesize*fsout); % Size of one frame
     M = floor(N*(1-overlap));  % Frame Spacing 
     
-    xframes = cell(1,S);
-    MFCCs = cell(1,S);
+    xframes = cell(1,numFiles);
+    MFCCs = cell(1,numFiles);
     %figure()
-    for i = 1:S % Get Frames of length N every M samples for each file
+    for i = 1:numFiles % Get Frames of length N every M samples for each file
         L = floor((length(x{i})-N)/M);
         mfccs = zeros(L+1,num_ceps);
         xframesTemp = zeros(L+1,N);
@@ -42,7 +54,5 @@ function MFCCs = mfccs(foldername,num_ceps,framesize,overlap,fsout,K,n_fft,notch
         MFCCs(i) = {mfccs(:,2:num_ceps)};
         xframes(i) = {xframesTemp};
         %MFCCs(i) = {MFCCs{i}/max(abs(MFCCs{i}),[],'all')};
-        %MFCCs(i) = {MFCCs{i}./std(MFCCs{i},0,1)};
-        %MFCCs(i) = {MFCCs{i} - repmat(mean(MFCCs{i},1),L+1,1)};
     end
 end
