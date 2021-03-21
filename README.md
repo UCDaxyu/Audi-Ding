@@ -133,7 +133,7 @@ Understanding the clustering algorithm was a major challenge for our team. As a 
 For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases and are shown in the figure below. It is imortant to note that although we were originally comparing the exact same signals against eachother there was still distortion. This was because we calculated distortion by finding the Euclidian distance between each point and its nearest cenetroid.
 
 <p align="center">
-  <img src="/Images/py_Test_Evaluation" width= "800" height ="400" />
+  <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
 </p>
 
 
