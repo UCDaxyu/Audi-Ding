@@ -154,6 +154,11 @@ Further testing was performed by recording our own voices for multiple training 
 
 In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
 
+
+<p align="center">
+  <img src="/Images/py_noisy_signals.png"/><br>
+</p>
+
 <p align="center">
   <img src="/Images/noisy_results.png"/><br>
 </p>
