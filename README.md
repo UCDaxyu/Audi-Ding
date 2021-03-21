@@ -40,7 +40,6 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
 ## Test 2: Looking at the Data
 <p align="center">
     <img src="/Images/py_Speaker1_Data.png" width= "800" height ="400" />
-    <figcaption>Figure 1.</figcaption>
 </p>
 
 
