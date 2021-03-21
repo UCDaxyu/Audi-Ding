@@ -13,7 +13,7 @@ ___
 # Our Project
 
 
-[![Speaker Recognition Presentation](https://img.youtube.com/vi/KjJYcQYxU4I/0.jpg)](https://www.youtube.com/watch?v=KjJYcQYxU4I) width = "400" height = "800"
+[![Speaker Recognition Presentation](https://img.youtube.com/vi/KjJYcQYxU4I/0.jpg)](https://www.youtube.com/watch?v=KjJYcQYxU4I) 
 
 
 
