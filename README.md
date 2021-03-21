@@ -160,7 +160,7 @@ In order to test the robustness of our program we applied white gaussian noise t
 </p>
 
 <p align="center">
-  <img src="/Images/noisy_text_results.png"  /><br>
+  <img src="/Images/noisy_text_results.png"  width= "800" height ="100"/><br>
 </p>
 
 <<<<<<< Updated upstream
