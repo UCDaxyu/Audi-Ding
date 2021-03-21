@@ -29,9 +29,6 @@ The steps followed for category 1 were followed; however, following the completi
 
 In order to ensure there are not false positives we impleneted a requirement that the next closest training signal be at least 15% worse than the best represented signal. Additionally we implemented an absolute distortion requirement such that the total distortion must be less than 2.5. 
 
-## Principles of Speaker Recognition
-- 
-
 ## Test 1: Listening to the Data
 After listening to the data that was provided (updated) on 3/14/2021 we established ground truth data by listening to the files provided. It was established that the data tracked in a diagnol pattern. Training Speaker 1 corresponded to Test Speaker 1, 2 to 2, 3 to 3, etc.
 
