@@ -99,10 +99,6 @@ So lets compare the spectrograms of speaker 1 before and after the filterbanks a
 With all filter banks calculated, we can now find the Mel Frequency Cepstral Coeefficients(MFCCs) by summing the values in each filter bank and taking the natural log. To seperate the coefficients, we apply a discrete consine transform to the sums. The above figure is an example color plot of the MFCC values for speaker 1. We can see how they change over time.
 
 ## Test 5 & 6: Vector Quantization 
-<p align="center">
-  <img src="/Images/py_Clusters1.png" width= "800" height ="400" />
-</p>
-
 
 We used the LBG algorithm for vector quantization. 
 
@@ -119,7 +115,7 @@ The choice of clusters is up to us. The current design limits our number of clus
 
 
 <p align="center">
-  <img src="/Images/py_ColorClusters1.png" width= "800" height ="400" />
+  <img src="/Images/pretty_clusters.png" width= "800" height ="400" />
 </p>
 
 <p align="center">
