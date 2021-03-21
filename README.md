@@ -118,11 +118,6 @@ The choice of clusters is up to us. The current design limits our number of clus
   <img src="/Images/pretty_clusters.png" width= "800" height ="400" />
 </p>
 
-<p align="center">
-  <img src="/Images/py_ScatterComparison.png" width= "800" height ="400" />
-</p>
-
-
 
 <p align="center">
   <img src="/Images/Clustering.gif" width= "400" height ="400" />
