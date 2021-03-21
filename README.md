@@ -53,8 +53,10 @@ One thing that gave us some issues at first was analyzing stereo signals. In ord
 
 ## Test 2: Periodograms of the STFT
 <p align="center">
+  <figure>
   <img src="/Images/py_Periodogram_SPKR1_STFT.png" width= "800" height ="400" />
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "800" height ="400" />
+  </figure>
 </p>
 
 
