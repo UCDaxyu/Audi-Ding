@@ -134,7 +134,7 @@ For the full test demonstration we first sampled the 11 training samples and 11 
 </p>
 
 <p align="center">
-  <img src="/Images/py_og_results.png" width= "800" height ="100" />
+  <img src="/Images/py_og_results.png" />
 </p>
 
 
