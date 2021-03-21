@@ -10,7 +10,9 @@
 We worked together throughout all aspects of this project and aided eachother along the way. Alex was predominantly responsible for writing the code in MATLAB while Nick was predominantly responsible for writing the code in Python. This is not to say that either was written exclusively and throughout this project we have relied **heavily** on eachother when we got stuck at different parts.
 ##### This serves as the report for our speaker recognition project.
 ___
-# Speaker Recognition
+# Our Project
+
+![caption](https://youtu.be/KjJYcQYxU4I)
 
 ## Abstract
 This project is used to develop a method to recognize different speakers. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system uses has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
