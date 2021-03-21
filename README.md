@@ -130,8 +130,21 @@ The choice of clusters is up to us. The current design limits our number of clus
 Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The animation steps through the process of splitting the clusters and repositioning the centroids to the center of each new cluster. Note that the lines drawn are only valid for 2 dimensional data points and ** are not fully representative of data in higher dimensions**. The function to make this animation is provided in the Matlab folder. We hope this will be a good visual demonstrations for other DSP students.
 
 ## Test 7-9: Full Test And Demonstration
-For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
+For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases and are shown in the figure below. It is imortant to note that although we were originally comparing the exact same signals against eachother there was still distortion. This was because we calculated distortion by finding the Euclidian distance between each point and its nearest cenetroid.
+
+<p align="center">
+  <img src="/Images/py_Test_Evaluation" width= "800" height ="400" />
+</p>
+
+
 It was noted; however, that originally there were only 8 test sets and 11 training sets. It was noted that speakers 9,10,11 did not match well with any of the other 8 speakers. For this reason it was necessary to establish a threshold for distortion. Because our distortion calculations always resulted in 'an answer' we had to say that beyond a certain distortion level (both relative and absolute) we could not guarntee a good match.
+
+
+<p align="center">
+  <img src="/Images/cant_tell_8_11.png" width= "800" height ="400" />
+</p>
+
+
 
 Further testing was performed by recording our own voices for multiple training and test sets. All of our own recorded samples matched well. 
 
@@ -143,7 +156,6 @@ Further testing is in progress using outside resources to verify the rate of acc
 
 <p align="center">
   <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
-  <img src="/Images/py_Test_Evaluation1_Normalized.png" width= "800" height ="400" /><br>
 </p>
 
 
