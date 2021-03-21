@@ -39,10 +39,8 @@ After listening to the data that was provided (updated) on 3/14/2021 we establis
 
 ## Test 2: Looking at the Data
 <p align="center">
-  <figure>
     <img src="/Images/py_Speaker1_Data.png" width= "800" height ="400" />
     <figcaption>Figure 1.</figcaption>
-  </figure>
 </p>
 
 
@@ -53,10 +51,8 @@ One thing that gave us some issues at first was analyzing stereo signals. In ord
 
 ## Test 2: Periodograms of the STFT
 <p align="center">
-  <figure>
   <img src="/Images/py_Periodogram_SPKR1_STFT.png" width= "800" height ="400" />
   <img src="/Images/py_Periodogram_SPKR1_myfunction.png" width= "800" height ="400" />
-  </figure>
 </p>
 
 
