@@ -13,9 +13,9 @@ ___
 # Our Project
 
 
-[![Speaker Recognition Presentation](https://img.youtube.com/vi/KjJYcQYxU4I/0.jpg)](https://www.youtube.com/watch?v=KjJYcQYxU4I)
 
 
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/KjJYcQYxU4I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ![caption]()
