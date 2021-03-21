@@ -15,7 +15,7 @@ ___
 [![Speaker Recognition Presentation](https://img.youtube.com/vi/KjJYcQYxU4I/0.jpg)](https://www.youtube.com/watch?v=KjJYcQYxU4I) 
 
 ## Abstract
-This project is used to develop a method to recognize different speakers. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system uses has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
+This project is used to develop a method to recognize different speakers. A given test signal is compared against a set of training signals in order to determine which signal exhibits the most similar features. Our system has shown to be relatively resilient to noise variations and minor changes in speakers. Specifically our system correctly identified signals with 100% accuracy for signal to noise ratios ranging from 25 to 50 as well as being able to identify a given speaker saying the same word differently. For our system we used 25mS frames that ehbited 60% overlap, a 20-filter bandpass fiter-bank, 8 centroids for training signals, and 13 mfcc coefficients (ignoring the first coefficient).
 
 ## Introduction
 Our project can be simplified into two major categories each consisting of a few major steps. 
