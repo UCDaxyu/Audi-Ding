@@ -163,6 +163,7 @@ In order to test the robustness of our program we applied white gaussian noise t
   <img src="/Images/noisy_text_results.png"  /><br>
 </p>
 
+<<<<<<< Updated upstream
 The plot’s you see above include SNR’s of 40,25,15, and 5 respectively. For each, our program correctly identified the trainer-speaker combo; however, for the SNR of 5 our program failed to identify the trainer with a sufficiently higher relative confidence. This is clearly illustrated through our color map. As you can see for the fourth column the relative difference between trainer 1, 7, and 9 is very low.
 
 The robustness of our design is further tested through the use of band notch filters removing certain frequencies throughout our signal. For our implementation we used scipy.signal.iirnotch as well as the iirnotch() for matlab.
@@ -170,21 +171,38 @@ The robustness of our design is further tested through the use of band notch fil
 
 
 ## Test 8: Applying Notch Filters 
+=======
+## Test 9: Using Other Data Sets
+
+<p align="center">
+  <img src="/Images/Mat_free_spoken_results.png" width= "800" height ="400" />
+</p>
+With the success in our recognition model on the provided data, we wanted to extend our model to other datasets found online. The [Free-Spoken-Digit Dataset](https://github.com/Jakobovski/free-spoken-digit-dataset) was chosen for its similarity to our original data set. There are 6 speakers each saying 'zero' 50 times. The documentation indicates that the first five samples are the test set and the other 45 are for the test set. We adopt this in our analysis of the data as well.  
+
+The distortion matrix above shows the results of our model. The test files are referenced in the horizontal axis and the training models are on the vertical axis. Looking at the data, we can see that the first five test columns have the least relative distortion when compared to the first 45 training models and high relative distortion for the remaining 180 models. This same trend is seen for the next 5 test samples anf 45 training models and so on. This is 100% consistent with the ground truth. Every test sample has been correctly identified by the correct speaker and every training model is closely identifies with their original speaker.
+
+## Test 8: Applying Notch Filters  
+
+>>>>>>> Stashed changes
 <p align="center">
   <img src="/Images/Mat_notches.png" width= "800" height ="400" />
 </p>
-Adding noise was the first way to test for robustness. Another way to test the robustness  is too retest the testing data with frequency bands removed. From the spectrograms in test 3, we saw very distinct frequencies show up for all speakers. We can apply a notch filter like the ones shown above to remove some of those critical frequencies and see if we can still get a match. The base frequency for voiced sounds starts roughly at 300 hz while many voiced sounds are found in the 1khz range. 
-For fun, we centered the notch frequencies with the peak of each filter bank to produce the most disturbance in our model. 
+Adding noise was the first way to test for robustness. Another way to test the robustness  is to retest the data with frequency bands removed. From the spectrograms in test 3, we saw very distinct frequencies show up for all speakers. We can apply a notch filter like the ones shown above to remove some of those critical frequencies and see if we can still get a match. We applied one of these filters to the STFT and noted the changes in relative distortion. Testing each filter, we found that our model continued to consistently identify the speaker with our set distortion margin on 20% or higher.  
 
-The effects of notch filters were surprisingly weaker than anticipated. 
+<p align="center">
+  <img src="/Images/Mat_free_spoken_results_notched.png" width= "800" height ="400" />
+</p>
+With our model throuroughly withstanding a single notch, we thought it would be fun to test the effects of applying every notch filter at the same time. The plot above is the same free-spoken dataset with 13 notch filters applied. We can see along a few columns that the classfications begin to break down. Namely, test samples 16-20 begin to strongly match with a secondary speaker. To a lesser degree, we can see that test samples  6-10 also begin matching with a secondary speaker as well. That being said, it's still amazing to see the majority of the classfications holding strong.
+
+
 ## Running The Python Code
 
 #### Step 1 ####
-define the number of test files you want to run
+Define the number of test files you want to run
 initiate loop for number of test files stored in central location (runs in ascending order)
 read the .wav files
 remove 'stereo' signals if present by selecting first in the array
-pre-emphasize the signals https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html
+pre-emphasize the signals (https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
 #### Step 2 ####
 Find the windowed frames using MELFB_own() function which takes an input of data (.wav files)
 #### Step 3 ####
@@ -204,6 +222,8 @@ use codebooks and clustered points to match signals to training values and deter
 
 https://colab.research.google.com/drive/1qBeKrqYebtBMqKyBH-P6t9xjwLoUgOK8?usp=sharing
 
+
+## Running the Matlab Code
 
 
 
