@@ -129,9 +129,9 @@ The choice of clusters is up to us. The current design limits our number of clus
 
 
 <p align="center">
-  <img src="/Images/Clustering2.gif" width= "400" height ="400" />
+  <img src="/Images/Clustering.gif" width= "400" height ="400" />
 </p>
-Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The function to make this animation is provided in the Matlab folder. We hope this will be a good visual demonstrations for other DSP students.
+Understanding the clustering algorithm was a major challenge for our team. As a way to demonstrate our understanding, we created this animation detailing the steps to cluster and generate a codebook for a given speaker. The animation steps through the process of splitting the clusters and repositioning the centroids to the center of each new cluster. Note that the lines drawn are only valid for 2 dimensional data points and ** are not fully representative of data in higher dimensions**. The function to make this animation is provided in the Matlab folder. We hope this will be a good visual demonstrations for other DSP students.
 
 ## Test 7-9: Full Test And Demonstration
 For the full test demonstration we first sampled the 11 training samples and 11 test samples provided to us. The test cases matched very well with the training cases.
