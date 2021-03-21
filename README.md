@@ -110,7 +110,7 @@ We used the LBG algorithm for vector quantization.
 2. Then, we split the centroid in two according to a splitting coefficient (1+epsilon) and (1-epsilon). 
 3. Next, each point within the set was clustered around the nearest centroid through the euclidean distance formula. 
 4. The total distortion was found by summing the distortion of each point to its closest centroid. 
-5. We compare this new distortion to the distortion of the old postions with the following rule:
+5. We compare this new distortion to the distortion of the old positions with the following rule:
   1. If the difference in distortion relative to the new distortion is greater than 1% go back to step 3
   2. If the difference is less than 1%, we assume we have found optimal cluster configurations
 6. Go back to step 2 until we have the desired number of clusters
