@@ -131,6 +131,10 @@ For the full test demonstration we first sampled the 11 training samples and 11 
   <img src="/Images/py_Test_Evaluation.png" width= "800" height ="400" />
 </p>
 
+<p align="center">
+  <img src="/Images/py_og_results.png" width= "800" height ="400" />
+</p>
+
 
 It was noted; however, that originally there were only 8 test sets and 11 training sets. It was noted that speakers 9,10,11 did not match well with any of the other 8 speakers. For this reason it was necessary to establish a threshold for distortion. Because our distortion calculations always resulted in 'an answer' we had to say that beyond a certain distortion level (both relative and absolute) we could not guarntee a good match.
 
@@ -139,7 +143,9 @@ It was noted; however, that originally there were only 8 test sets and 11 traini
   <img src="/Images/cant_tell_8_11.png" width= "800" height ="400" />
 </p>
 
-
+<p align="center">
+  <img src="/Images/cant_tell_8_11_text.png" width= "800" height ="400" />
+</p>
 
 Further testing was performed by recording our own voices for multiple training and test sets. All of our own recorded samples matched well. 
 
