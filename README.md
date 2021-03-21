@@ -154,11 +154,11 @@ Further testing was performed by recording our own voices for multiple training 
 In order to test the robustness of our program we applied white gaussian noise to our signal with various different signal to noise ratios. This is displayed for speaker one and it is seen that there is a decending liklihood of match as the signal to noise ratio lowers.
 
 <p align="center">
-  <img src="/Images/noisy_text_results.png" width= "800" height ="400" /><br>
+  <img src="/Images/noisy_results.png" width= "800" height ="400" /><br>
 </p>
 
 <p align="center">
-  <img src="/Images/noisy_results.ng" width= "800" height ="400" /><br>
+  <img src="/Images/noisy_text_results.png" width= "400" height ="200" /><br>
 </p>
 
 The plot’s you see above include SNR’s of 40,25,15, and 5 respectively. For each, our program correctly identified the trainer-speaker combo; however, for the SNR of 5 our program failed to identify the trainer with a sufficiently higher relative confidence. This is clearly illustrated through our color map. As you can see for the fourth column the relative difference between trainer 1, 7, and 9 is very low.
